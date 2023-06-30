@@ -1,10 +1,3 @@
-def get_pow(number1, number2):
-	if number2 == 1:
-		return number1
-	else:
-		return number1 * get_pow(number1, number2 - 1)
-
-
 def get_int():
 	flag = True
 	value = 0
@@ -16,9 +9,11 @@ def get_int():
 			print('Error. Please enter correct digit! ', end='')
 
 
+def get_sum(number1, number2):
+	return number1 if number2 == 0 else get_sum(number1 + 1, number2 - 1)
+	
+
 value1 = get_int()
 value2 = get_int()
-result = get_pow(value1, value2)
+print(f'Sum of {value1} + {value2} = {get_sum(value1, value2)}')
 
-print(f'Value {value1} in pow {value2} = {result}')
-	
